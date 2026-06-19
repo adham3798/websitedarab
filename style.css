@@ -1,0 +1,278 @@
+/* ============================================================
+   DARB TYRES TRADING L.L.C — site stylesheet
+   Colours, fonts and spacing live here. Safe to tweak.
+   Brand colour = --red. Change it once to re-skin the site.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Saira+Condensed:wght@700;800;900&display=swap');
+
+:root{
+  --red:#e40521;
+  --red-dark:#b8001a;
+  --ink:#14171c;
+  --ink-2:#3c4148;
+  --muted:#6b7280;
+  --line:#e6e8eb;
+  --bg:#ffffff;
+  --bg-soft:#f4f5f7;
+  --dark:#0d0f12;
+  --dark-2:#14181d;
+  --radius:8px;
+  --maxw:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+[dir="rtl"] body{font-family:"Archivo",Tahoma,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{line-height:1.05;letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.soft{background:var(--bg-soft)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:#fff;font-weight:800;font-size:.86rem;letter-spacing:.02em;text-transform:uppercase;padding:12px 22px;border:2px solid var(--red);border-radius:5px;transition:.18s}
+.btn:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-lg{padding:16px 30px;font-size:.95rem}
+.nav .btn{padding:10px 16px;font-size:.78rem}
+.nav .btn-ghost{color:var(--ink)}
+
+/* ---------- header / nav ---------- */
+header.site{position:sticky;top:0;z-index:60;background:rgba(13,15,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid #23262b}
+.nav{display:flex;align-items:center;justify-content:space-between;height:96px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.nav-logo{height:74px;width:auto;display:block}
+/* ----- Darb "Tread D" logo mark (red / black / white) ----- */
+.bmark{height:40px;width:auto;flex:none;display:inline-flex;align-items:center;color:var(--ink);line-height:0}
+.bmark svg{height:100%;width:auto;display:block}
+footer.site .bmark,.ptop .bmark{color:#fff}
+/* moving red lane line — the "darb" (road) in motion */
+.bmark .lane{animation:darbLane .85s linear infinite}
+@keyframes darbLane{from{transform:translateY(0)}to{transform:translateY(21px)}}
+.brand:hover .bmark .lane{animation-duration:.45s}
+@media (prefers-reduced-motion:reduce){.bmark .lane{animation:none}}
+.brand .name{font-weight:900;font-size:1.28rem;line-height:.96;letter-spacing:-.01em}
+.brand .name span{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.01em}
+.brand .name small{display:block;font-weight:700;font-size:.56rem;color:var(--muted);letter-spacing:.22em;text-transform:uppercase;margin-top:2px}
+footer.site .brand .name small,.ptop .brand .name small{color:#aab0b7}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;color:#c9ced4;padding:6px 0;position:relative}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
+.nav-links a.active::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:var(--red)}
+.nav-links a.btn.active{color:#fff}
+.nav-links a.btn-ghost.active{color:#fff}
+.nav-links a.btn.active::after,.nav-links a.btn-ghost.active::after{display:none}
+.nav .btn-ghost{color:#fff;border-color:#3a3f45}
+.nav .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.lang-toggle{background:transparent;border:1.5px solid #3a3f45;color:#fff;padding:8px 13px;border-radius:5px;font-weight:800;font-size:.78rem;transition:.18s}
+.lang-toggle:hover{border-color:#fff}
+.menu-btn{display:none;background:none;border:none;font-size:1.6rem;color:#fff}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;background:var(--dark);color:#fff;min-height:520px;overflow:hidden}
+.hero-text{display:flex;align-items:center;background:
+  radial-gradient(700px 400px at 80% 10%,rgba(228,5,33,.22),transparent 60%),
+  linear-gradient(120deg,var(--dark) 40%,#2a0a0e 120%)}
+.hero-inner{padding:64px 56px}
+.hero-logo{width:100%;max-width:380px;height:auto;display:block;margin-bottom:22px}
+.hero .tagline{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--red);padding:7px 14px;border-radius:4px;margin-bottom:20px}
+/* full logo in footer */
+.foot-logo{width:220px;max-width:82%;height:auto;display:block;margin-bottom:14px}
+.hero h1{font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:18px}
+.hero p{color:#c9ced4;font-size:1.08rem;max-width:520px;margin-bottom:28px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-photo{position:relative;min-height:340px}
+.hero-photo .slot{width:100%;height:100%;object-fit:cover}
+
+/* ---------- red stat strip ---------- */
+.redstrip{background:var(--red);color:#fff}
+.redstrip .wrap{display:flex;flex-wrap:wrap;justify-content:space-around;gap:18px;padding:26px 24px;text-align:center}
+.redstrip .it .n{font-size:1.8rem;font-weight:900}
+.redstrip .it .l{font-size:.82rem;opacity:.92;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+
+/* ---------- sections ---------- */
+.section{padding:72px 0}
+.sec-head{margin-bottom:42px}
+.sec-head.center{text-align:center;max-width:680px;margin-left:auto;margin-right:auto}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--red)}
+.sec-head.center .kicker{justify-content:center}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+.sec-head p,.sec-head .sub{color:var(--muted);font-size:1.04rem;margin-top:10px}
+
+/* ---------- page head (interior) ---------- */
+.phead{background:var(--dark);color:#fff;padding:54px 0}
+.phead h1{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:900;text-transform:uppercase}
+.phead p{color:#c9ced4;margin-top:10px;max-width:680px}
+.crumb{font-size:.78rem;color:#9aa1a8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.crumb a:hover{color:#fff}
+
+/* ---------- card grids ---------- */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* simple info card */
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:.2s}
+.card:hover{border-color:var(--red);box-shadow:0 12px 28px rgba(0,0,0,.07);transform:translateY(-3px)}
+.card .ic{width:46px;height:46px;border-radius:8px;display:grid;place-items:center;background:var(--red);color:#fff;font-size:1.3rem;font-weight:800;margin-bottom:16px}
+.card h4{font-size:1.08rem;font-weight:800;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.92rem}
+.soft .card{background:#fff}
+
+/* product / category cards */
+.pcard{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.2s}
+.pcard:hover{border-color:var(--red);box-shadow:0 16px 34px rgba(0,0,0,.1);transform:translateY(-4px)}
+.pcard .photo{position:relative;height:210px;overflow:hidden;background:var(--bg-soft)}
+.pcard .photo .slot{width:100%;height:100%;object-fit:cover;transition:.4s}
+.pcard:hover .photo .slot{transform:scale(1.05)}
+.pcard .tag{position:absolute;top:12px;left:12px;z-index:2;background:var(--red);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:3px}
+[dir="rtl"] .pcard .tag{left:auto;right:12px}
+.pcard .body{padding:22px;display:flex;flex-direction:column;flex:1}
+.pcard h3{font-size:1.18rem;font-weight:800;text-transform:uppercase;margin-bottom:9px}
+.pcard p{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.pcard .spec{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;margin-top:auto}
+.pcard .spec span{background:var(--bg-soft);border:1px solid var(--line);border-radius:3px;font-size:.72rem;font-weight:700;color:var(--ink-2);padding:3px 9px}
+.pcard .more{color:var(--red);font-weight:800;font-size:.86rem;text-transform:uppercase;letter-spacing:.03em}
+
+/* ---------- category filter bar ---------- */
+.cat-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;justify-content:center}
+.cat-bar button{background:#fff;border:1.5px solid var(--line);color:var(--ink-2);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;padding:10px 18px;border-radius:5px;transition:.18s}
+.cat-bar button:hover{border-color:var(--ink)}
+.cat-bar button.on{background:var(--red);border-color:var(--red);color:#fff}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+/* ---------- split + media ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.media{border-radius:var(--radius);overflow:hidden;min-height:340px;background:var(--bg-soft)}
+.media .slot{width:100%;height:100%;min-height:340px;object-fit:cover}
+
+/* feature list */
+.feat-list{list-style:none;display:grid;gap:16px;margin-top:14px}
+.feat-list li{display:flex;gap:13px;align-items:flex-start}
+.feat-list .tick{flex:none;width:28px;height:28px;border-radius:5px;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.85rem}
+.feat-list h4{font-weight:800;margin-bottom:2px;font-size:1rem}
+.feat-list p{color:var(--muted);font-size:.9rem}
+
+/* facts table (about / distributor) */
+.facts{display:grid;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.facts .row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);background:#fff}
+.facts .row:last-child{border-bottom:0}
+.facts .k{font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.facts .v{font-weight:600}
+
+/* ---------- brands ---------- */
+.brand-strip{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.brand-strip .chip{border:1px solid var(--line);background:#fff;border-radius:5px;padding:12px 24px;font-weight:800;color:var(--ink-2);transition:.18s}
+.brand-strip .chip:hover{border-color:var(--red);color:var(--ink)}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--dark);color:#fff;padding:60px 0}
+.cta .wrap{text-align:center}
+.cta h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+.cta p{color:#c9ced4;font-size:1.06rem;max-width:600px;margin:0 auto 24px}
+.cta-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;text-align:start;align-items:center}
+.cta-split h2{text-align:start}
+
+/* ---------- forms ---------- */
+.form{display:grid;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.cta .form{color:var(--ink)}
+.field{display:grid;gap:6px}
+.field label{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2)}
+.cta .field label{color:#c9ced4}
+.form input,.form textarea,.form select{background:#fff;border:1.5px solid var(--line);border-radius:5px;padding:12px;font-size:.94rem;font-family:inherit;color:var(--ink)}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--red)}
+.form textarea{resize:vertical;min-height:110px}
+.form-note{font-size:.84rem;color:var(--muted)}
+
+/* ---------- footer ---------- */
+footer.site{background:var(--dark);color:#aab0b7;padding:54px 0 22px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:30px;margin-bottom:32px}
+.foot-col h4{color:#fff;font-weight:800;margin-bottom:14px;font-size:.84rem;text-transform:uppercase;letter-spacing:.08em}
+.foot-col a,.foot-col p{display:block;color:#aab0b7;font-size:.9rem;margin-bottom:9px;transition:.18s}
+.foot-col a:hover{color:var(--red)}
+.foot-brand .brand .name{color:#fff}
+.foot-brand p{margin-top:14px}
+.foot-bottom{border-top:1px solid #23262b;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.82rem}
+
+/* ---------- floating WhatsApp ---------- */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:80;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.28);transition:transform .15s}
+.wa-float:hover{transform:scale(1.08)}
+[dir="rtl"] .wa-float{right:auto;left:22px}
+
+/* ---------- auth / login ---------- */
+.auth{min-height:calc(100vh - 74px);display:grid;place-items:center;background:
+  radial-gradient(600px 360px at 50% 0%,rgba(228,5,33,.10),transparent 70%),var(--bg-soft);padding:50px 20px}
+.auth-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:38px 34px;width:100%;max-width:420px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.auth-card .bmark{height:54px;justify-content:center;margin:0 auto 18px}
+.auth-card h1{font-size:1.5rem;font-weight:900;text-transform:uppercase;margin-bottom:6px}
+.auth-card .sub{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.auth-demo{background:var(--bg-soft);border:1px dashed var(--line-strong,#c5cbd3);border-radius:6px;padding:10px;font-size:.8rem;color:var(--ink-2);margin-bottom:18px;font-weight:600}
+.auth-card form{display:grid;gap:14px;text-align:start}
+.auth-card .field input{background:#fff;border:1.5px solid var(--line);border-radius:5px;padding:12px;font-size:.94rem;font-family:inherit;width:100%}
+.auth-card .field input:focus{outline:none;border-color:var(--red)}
+.auth-err{display:none;background:#fdecee;color:var(--red-dark);border:1px solid #f6c9ce;border-radius:5px;padding:10px;font-size:.84rem;font-weight:700}
+.auth-row{display:flex;align-items:center;justify-content:space-between;font-size:.84rem;color:var(--muted)}
+.auth-row a:hover{color:var(--red)}
+.auth-foot{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+.auth-foot a{color:var(--red);font-weight:700}
+
+/* ---------- B2B portal ---------- */
+.ptop{background:var(--dark);color:#fff;border-bottom:1px solid #23262b}
+.ptop .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.ptop .brand .name{color:#fff}
+.ptop .nav-logo{height:46px;width:auto;display:block}
+.ptop .right{display:flex;align-items:center;gap:14px}
+.ptop .who{font-size:.86rem;color:#c9ced4}
+.ptop .who b{color:#fff}
+.ptop .lang-toggle{background:transparent;color:#fff;border-color:#33373d}
+.ptop .logout{background:transparent;border:1.5px solid #33373d;color:#fff;padding:8px 14px;border-radius:5px;font-weight:700;font-size:.82rem}
+.ptop .logout:hover{border-color:var(--red);color:#fff}
+.portal{padding:34px 0 70px;background:var(--bg-soft);min-height:80vh}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:28px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.kpi .v{font-size:1.7rem;font-weight:900}
+.kpi .k{color:var(--muted);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-top:4px}
+.pgrid{display:grid;grid-template-columns:1.65fr 1fr;gap:24px;align-items:start}
+.panel-head{margin-bottom:16px}
+.panel-head h2{font-size:1.25rem;font-weight:900;text-transform:uppercase}
+.panel-head p{color:var(--muted);font-size:.9rem;margin-top:4px}
+.tscroll{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.ptable{width:100%;border-collapse:collapse;min-width:560px}
+.ptable th,.ptable td{padding:12px 14px;text-align:start;border-bottom:1px solid var(--line);font-size:.86rem}
+.ptable th{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--bg-soft)}
+.ptable tbody tr:last-child td{border-bottom:0}
+.ptable .price{font-weight:800}
+.stock-ok{color:#0a7a2f;font-weight:700;font-size:.82rem}
+.stock-low{color:#b8001a;font-weight:700;font-size:.82rem}
+.order-btn{background:var(--red);color:#fff;border:0;border-radius:4px;padding:7px 14px;font-weight:800;font-size:.78rem;text-transform:uppercase}
+.order-btn:hover{background:var(--red-dark)}
+.badge{display:inline-block;background:#e9f7ee;color:#0a7a2f;border:1px solid #bfe6cd;border-radius:4px;padding:2px 9px;font-size:.74rem;font-weight:800;text-transform:uppercase}
+aside .ptable td{font-size:.84rem}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-inner{padding:48px 28px}
+  .hero-photo{min-height:260px;order:-1}
+  .grid-3,.grid-4,.prod-grid{grid-template-columns:1fr 1fr}
+  .split,.cta-split,.pgrid{grid-template-columns:1fr;gap:32px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .nav{height:78px}
+  .nav-logo{height:58px}
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-links.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:78px;left:0;right:0;background:#0d0f12;border-bottom:1px solid #23262b;padding:18px 24px;gap:14px}
+  .nav-links.open .btn{width:100%}
+  .nav-links.open a{color:#fff}
+}
+@media(max-width:600px){
+  .grid-3,.grid-4,.prod-grid,.foot-grid,.kpi-grid{grid-template-columns:1fr}
+  .facts .row{grid-template-columns:1fr;gap:4px}
+  .hero h1{font-size:1.9rem}
+  .foot-bottom{flex-direction:column}
+}

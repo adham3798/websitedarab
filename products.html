@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e40521">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Products — Darb Tyres Trading L.L.C</title>
+<meta name="description" content="Browse Darb Tyres Trading's range: car, 4x4, van, truck and bus tyres. Wholesale supply across the UAE, GCC and Africa.">
+<script>try{var l=localStorage.getItem('darbLang')||'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img class="nav-logo" src="darb-logo-on-dark.svg" alt="Darb Tyres Trading"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" class="active" data-i18n="nav_products">Products</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">العربية</button>
+      <a href="distributor.html" class="btn btn-ghost" data-i18n="nav_distributor">Become a Distributor</a>
+      <a href="login.html" class="btn" data-i18n="nav_login">B2B Login</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- PAGE HEAD -->
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html" data-i18n="nav_home">Home</a> / <span data-i18n="nav_products">Products</span></div>
+    <h1 data-i18n="pp_title">Our Tyre Range</h1>
+    <p data-i18n="pp_lead">Browse by category. Sizes and brands vary by stock — contact us for current availability and a wholesale quote.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <div class="wrap">
+    <div class="cat-bar">
+      <button class="on" data-cat="all" data-i18n="cat_all">All</button>
+      <button data-cat="passenger" data-i18n="cat_passenger">Car &amp; 4×4</button>
+      <button data-cat="van" data-i18n="cat_van">Van</button>
+      <button data-cat="truck" data-i18n="cat_truck">Truck</button>
+      <button data-cat="bus" data-i18n="cat_bus">Bus</button>
+      <button data-cat="otr" data-i18n="cat_otr">OTR</button>
+      <button data-cat="mining" data-i18n="cat_mining">Mining</button>
+      <button data-cat="agri" data-i18n="cat_agri">Agricultural</button>
+    </div>
+
+    <div class="prod-grid">
+      <article class="pcard" data-cat="passenger">
+        <div class="photo"><span class="tag">PCR</span><!-- photo: p1 (swap src to change) --><img class="slot" data-img="p1" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80&auto=format&fit=crop" alt="Passenger tyre" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pc1_t">Passenger All-Season</h3>
+          <p data-i18n="pc1_p">Balanced grip, comfort and long tread life for everyday cars.</p>
+          <div class="spec"><span>13″–18″</span><span>All-Season</span><span>T · H · V</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="passenger">
+        <div class="photo"><span class="tag">UHP</span><!-- photo: p2 (swap src to change) --><img class="slot" data-img="p2" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=900&q=80&auto=format&fit=crop" alt="Performance tyre" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pc2_t">UHP &amp; Performance</h3>
+          <p data-i18n="pc2_p">High-speed stability and dry/wet grip for sport sedans and coupes.</p>
+          <div class="spec"><span>17″–22″</span><span>UHP</span><span>W · Y</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="passenger">
+        <div class="photo"><span class="tag">SUV / 4×4</span><!-- photo: p3 (swap src to change) --><img class="slot" data-img="p3" src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=900&q=80&auto=format&fit=crop" alt="Suv / 4x4 tyre" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pc3_t">SUV &amp; 4×4 All-Terrain</h3>
+          <p data-i18n="pc3_p">Durable, reinforced tyres for on- and off-road driving.</p>
+          <div class="spec"><span>15″–20″</span><span>A/T</span><span>3PMSF</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="van">
+        <div class="photo"><span class="tag">VAN / LCV</span><!-- photo: p4 (swap src to change) --><img class="slot" data-img="p4" src="https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=900&q=80&auto=format&fit=crop" alt="Van tyre" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pc4_t">Van &amp; Light Truck</h3>
+          <p data-i18n="pc4_p">Reinforced casings for heavy loads and high mileage.</p>
+          <div class="spec"><span>14″–16″ C</span><span>8–10 PR</span><span>Reinforced</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="truck">
+        <div class="photo"><span class="tag">TBR</span><!-- photo: p5 (swap src to change) --><img class="slot" data-img="p5" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80&auto=format&fit=crop" alt="Truck tyre" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pc5_t">Truck Long-Haul (TBR)</h3>
+          <p data-i18n="pc5_p">Fuel-efficient steer and drive tyres for highway fleets.</p>
+          <div class="spec"><span>22.5″</span><span>Steer · Drive</span><span>Retreadable</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="bus">
+        <div class="photo"><span class="tag">BUS</span><!-- photo: p6 (swap src to change) --><img class="slot" data-img="p6" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=900&q=80&auto=format&fit=crop" alt="Bus tyre" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="pc6_t">Bus &amp; Urban</h3>
+          <p data-i18n="pc6_p">Stop-start durability and high load capacity for city routes.</p>
+          <div class="spec"><span>19.5″–22.5″</span><span>All-Position</span><span>High Load</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="otr">
+        <div class="photo"><span class="tag">OTR</span><!-- photo: p7 (swap src to change) --><img class="slot" data-img="p7" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop" alt="Loader / grader photo" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="hc4_t">OTR &amp; Earthmover</h3>
+          <p data-i18n="hc4_p">Loader, grader and haul tyres for construction and earthmoving.</p>
+          <div class="spec"><span>25″–35″</span><span>E3 / L3</span><span>Loader · Grader</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="mining">
+        <div class="photo"><span class="tag">MINING</span><!-- photo: p8 (swap src to change) --><img class="slot" data-img="p8" src="https://images.unsplash.com/photo-1517089152318-42ec560349c0?w=900&q=80&auto=format&fit=crop" alt="Mining haul-truck photo" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="hc5_t">Mining</h3>
+          <p data-i18n="hc5_p">Heavy-duty tyres engineered for haul trucks and severe mining duty.</p>
+          <div class="spec"><span>49″–63″</span><span>E4 / L5</span><span>Haul Truck</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+
+      <article class="pcard" data-cat="agri">
+        <div class="photo"><span class="tag">AGRI</span><!-- photo: p9 (swap src to change) --><img class="slot" data-img="p9" src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?w=900&q=80&auto=format&fit=crop" alt="Tractor photo" loading="lazy"></div>
+        <div class="body">
+          <h3 data-i18n="hc6_t">Agricultural</h3>
+          <p data-i18n="hc6_p">Tractor, flotation and implement tyres that protect soil and grip.</p>
+          <div class="spec"><span>R-1W</span><span>24″–46″</span><span>Tractor · Flotation</span></div>
+          <a class="more" href="contact.html" data-i18n="p_quote">Request Quote →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="section soft">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="kicker" data-i18n="br_kicker">Brands We Carry</div>
+      <h2 data-i18n="br_title">Leading tyre brands</h2>
+      <p data-i18n="br_sub">We stock a broad portfolio of trusted international brands. Contact us for current availability and pricing.</p>
+    </div>
+    <div class="brand-strip">
+      <a class="chip" href="https://www.bridgestone.com" target="_blank" rel="noopener">Bridgestone</a><a class="chip" href="https://www.michelin.com" target="_blank" rel="noopener">Michelin</a><a class="chip" href="https://www.goodyear.com" target="_blank" rel="noopener">Goodyear</a>
+      <a class="chip" href="https://www.continental-tires.com" target="_blank" rel="noopener">Continental</a><a class="chip" href="https://www.pirelli.com" target="_blank" rel="noopener">Pirelli</a><a class="chip" href="https://www.dunloptires.com" target="_blank" rel="noopener">Dunlop</a>
+      <a class="chip" href="https://www.hankooktire.com" target="_blank" rel="noopener">Hankook</a><a class="chip" href="https://www.yokohamatire.com" target="_blank" rel="noopener">Yokohama</a><a class="chip" href="https://www.kumhotire.com" target="_blank" rel="noopener">Kumho</a><a class="chip" href="https://www.toyotires.com" target="_blank" rel="noopener">Toyo</a>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:18px" data-i18n="br_note">Availability varies — contact us to confirm brands and sizes in stock.</p>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="kicker" data-i18n="ho_kicker">Ordering</div>
+      <h2 data-i18n="ho_title">How to order</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="ic">1</div><h4 data-i18n="st1_t">Send your list</h4><p data-i18n="st1_p">Share tyre sizes, brands and quantities by phone, email or WhatsApp.</p></div>
+      <div class="card"><div class="ic">2</div><h4 data-i18n="st2_t">Get a quote</h4><p data-i18n="st2_p">We confirm availability and send competitive wholesale pricing within 24 hours.</p></div>
+      <div class="card"><div class="ic">3</div><h4 data-i18n="st3_t">We supply</h4><p data-i18n="st3_p">Approve the order and we arrange fast delivery across the UAE and export.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HELP -->
+<section class="cta">
+  <div class="wrap">
+    <h2 data-i18n="pp_help_t">Can't find the size you need?</h2>
+    <p data-i18n="pp_help_p">Send us the tyre size, brand and quantity — our team will confirm availability and pricing.</p>
+    <a href="contact.html" class="btn btn-lg" data-i18n="nav_quote">Request a Quote</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <img class="foot-logo" src="darb-logo-on-dark.svg" alt="Darb Tyres Trading">
+        <p data-i18n="foot_tag">Your trusted wholesale tyre supplier for car, 4×4, van, truck and bus — based in Ajman, UAE.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_products">Our Tyres</h4>
+        <a href="products.html" data-i18n="fp_car">Car &amp; 4×4 tyres</a>
+        <a href="products.html" data-i18n="fp_van">Van tyres</a>
+        <a href="products.html" data-i18n="fp_truck">Truck tyres</a>
+        <a href="products.html" data-i18n="fp_bus">Bus tyres</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_company">Company</h4>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="distributor.html" data-i18n="nav_distributor">Become a Distributor</a>
+        <a href="login.html" data-i18n="nav_login">B2B Login</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_reach">Contact</h4>
+        <p data-cfg-address>Office No. 640, Nakheel 2, Ajman, UAE</p>
+        <a data-tel href="#" data-cfg-phone>+971 52 466 6601</a>
+        <a data-mail href="#" data-cfg-email>darbtyrestrading@gmail.com</a>
+        <p data-i18n="ci_hours">Sat–Thu: 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> <span data-cfg-company>DARB TYRES TRADING L.L.C</span>. <span data-i18n="foot_rights">All rights reserved.</span></span>
+      <span>Reg. No. <span data-cfg-reg>201803814</span></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.3-.4C5.5 18 5 16.5 5 15 5 8.9 9.9 4 16 4s11 4.9 11 11-4.9 9.8-11 9.8zm6.1-7.3c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
+</body>
+</html>

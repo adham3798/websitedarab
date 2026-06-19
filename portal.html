@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e40521">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>B2B Portal — Darb Tyres Trading L.L.C</title>
+<meta name="robots" content="noindex">
+<script>try{var l=localStorage.getItem('darbLang')||'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+
+<!-- PORTAL TOP BAR -->
+<div class="ptop">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="nav-logo" src="darb-logo-on-dark.svg" alt="Darb Tyres Trading"></a>
+    <div class="right">
+      <span class="who"><span data-i18n="pt_welcome">Welcome back</span>, <b id="ptUser">Partner</b></span>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">العربية</button>
+      <button class="logout" onclick="logout()" data-i18n="pt_logout">Log out</button>
+    </div>
+  </div>
+</div>
+
+<main class="portal">
+  <div class="wrap">
+
+    <!-- KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi"><div class="v">3</div><div class="k" data-i18n="pt_kpi1">Open Orders</div></div>
+      <div class="kpi"><div class="v">AED 38,400</div><div class="k" data-i18n="pt_kpi2">Spend This Month</div></div>
+      <div class="kpi"><div class="v">30 days</div><div class="k" data-i18n="pt_kpi3">Credit Terms</div></div>
+      <div class="kpi"><div class="v"><span class="badge" data-i18n="pt_active">Active</span></div><div class="k" data-i18n="pt_kpi4">Account Status</div></div>
+    </div>
+
+    <div class="pgrid">
+      <!-- PRICE LIST -->
+      <section>
+        <div class="panel-head">
+          <div>
+            <h2 data-i18n="pt_price_title">Wholesale Price List</h2>
+            <p data-i18n="pt_price_sub">Indicative trade pricing — your contracted rates apply at checkout.</p>
+          </div>
+        </div>
+        <div class="tscroll">
+          <table class="ptable">
+            <thead>
+              <tr>
+                <th data-i18n="pt_col_sku">SKU</th>
+                <th data-i18n="pt_col_desc">Description</th>
+                <th data-i18n="pt_col_size">Size</th>
+                <th data-i18n="pt_col_stock">Stock</th>
+                <th data-i18n="pt_col_price">Trade Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>DRB-PCR-2055516</td><td>Passenger All-Season</td><td>205/55 R16</td><td><span class="stock-ok" data-i18n="pt_instock">In stock</span></td><td class="price">AED 168</td><td><button class="order-btn" data-i18n="pt_order">Order</button></td></tr>
+              <tr><td>DRB-UHP-2454518</td><td>UHP Performance</td><td>245/45 R18</td><td><span class="stock-ok" data-i18n="pt_instock">In stock</span></td><td class="price">AED 312</td><td><button class="order-btn" data-i18n="pt_order">Order</button></td></tr>
+              <tr><td>DRB-SUV-2657017</td><td>SUV All-Terrain</td><td>265/70 R17</td><td><span class="stock-low" data-i18n="pt_lowstock">Low</span></td><td class="price">AED 395</td><td><button class="order-btn" data-i18n="pt_order">Order</button></td></tr>
+              <tr><td>DRB-VAN-1957515</td><td>Van Reinforced C</td><td>195/75 R16C</td><td><span class="stock-ok" data-i18n="pt_instock">In stock</span></td><td class="price">AED 243</td><td><button class="order-btn" data-i18n="pt_order">Order</button></td></tr>
+              <tr><td>DRB-TBR-1122522</td><td>Truck Long-Haul Steer</td><td>11 R22.5</td><td><span class="stock-ok" data-i18n="pt_instock">In stock</span></td><td class="price">AED 985</td><td><button class="order-btn" data-i18n="pt_order">Order</button></td></tr>
+              <tr><td>DRB-BUS-2957522</td><td>Bus All-Position</td><td>295/80 R22.5</td><td><span class="stock-low" data-i18n="pt_lowstock">Low</span></td><td class="price">AED 1,120</td><td><button class="order-btn" data-i18n="pt_order">Order</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:14px" data-i18n="pt_demo_note">This is a demo portal — data is illustrative.</p>
+      </section>
+
+      <!-- RECENT ORDERS -->
+      <aside>
+        <div class="panel-head"><h2 data-i18n="pt_recent">Recent Orders</h2></div>
+        <div class="tscroll">
+          <table class="ptable" style="min-width:0">
+            <tbody>
+              <tr><td><b>#DT-1042</b><br><span style="color:var(--muted);font-size:.8rem">12 Jun 2026 · 48 units</span></td><td style="text-align:end"><div class="price">AED 14,200</div><span class="badge" data-i18n="pt_active">Active</span></td></tr>
+              <tr><td><b>#DT-1039</b><br><span style="color:var(--muted);font-size:.8rem">04 Jun 2026 · 120 units</span></td><td style="text-align:end"><div class="price">AED 19,800</div><span class="badge" style="background:#eef0f3;color:#5c636d;border-color:#dce0e6">Delivered</span></td></tr>
+              <tr><td><b>#DT-1031</b><br><span style="color:var(--muted);font-size:.8rem">22 May 2026 · 32 units</span></td><td style="text-align:end"><div class="price">AED 9,640</div><span class="badge" style="background:#eef0f3;color:#5c636d;border-color:#dce0e6">Delivered</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="contact.html" class="btn" style="width:100%;margin-top:16px" data-i18n="nav_quote">Request a Quote</a>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var u = 'Darb Partner';
+  try{ u = sessionStorage.getItem('darbUser') || u; }catch(e){}
+  document.getElementById('ptUser').textContent = u;
+})();
+function logout(){
+  try{ sessionStorage.removeItem('darbUser'); }catch(e){}
+  window.location.href = 'login.html';
+}
+</script>
+</body>
+</html>

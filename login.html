@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e40521">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>B2B Login — Darb Tyres Trading L.L.C</title>
+<meta name="robots" content="noindex">
+<script>try{var l=localStorage.getItem('darbLang')||'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img class="nav-logo" src="darb-logo-on-dark.svg" alt="Darb Tyres Trading"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()">العربية</button>
+      <a href="distributor.html" class="btn btn-ghost" data-i18n="nav_distributor">Become a Distributor</a>
+      <a href="login.html" class="btn active" data-i18n="nav_login">B2B Login</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- LOGIN -->
+<section class="auth">
+  <div class="auth-card">
+    <span class="bmark" aria-hidden="true"><svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow:hidden"><polygon points="30,5 42,5 64,68 8,68" fill="currentColor" opacity=".12"/><polygon points="30,5 42,5 64,68 8,68" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/><g class="lane" fill="#e40521"><rect x="33" y="-13" width="6" height="9" rx="1"/><rect x="33" y="8" width="6" height="9" rx="1"/><rect x="33" y="29" width="6" height="9" rx="1"/><rect x="33" y="50" width="6" height="9" rx="1"/><rect x="33" y="71" width="6" height="9" rx="1"/></g></svg></span>
+    <h1 data-i18n="login_title">B2B Portal Login</h1>
+    <p class="sub" data-i18n="login_sub">Sign in to place wholesale orders and track your account.</p>
+    <div class="auth-demo" data-i18n="login_demo">Demo access — Username: darb · Password: demo123</div>
+    <form id="loginForm">
+      <div class="auth-err" id="loginErr">Invalid username or password.</div>
+      <div class="field"><label data-i18n="lf_user">Username</label><input type="text" id="username" autocomplete="username" data-i18n-ph="lf_user" placeholder="Username"></div>
+      <div class="field"><label data-i18n="lf_pass">Password</label><input type="password" id="password" autocomplete="current-password" data-i18n-ph="lf_pass" placeholder="Password"></div>
+      <div class="auth-row">
+        <label><input type="checkbox" id="remember"> <span data-i18n="lf_remember">Remember me</span></label>
+        <a href="#" data-i18n="login_forgot">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn" style="width:100%" data-i18n="lf_signin">Sign In</button>
+    </form>
+    <div class="auth-foot">
+      <span data-i18n="login_new">New customer?</span><br>
+      <a href="distributor.html" data-i18n="login_apply">Apply to become a distributor →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var u = document.getElementById('username').value.trim();
+  var p = document.getElementById('password').value;
+  var err = document.getElementById('loginErr');
+  // demo: accept darb/demo123, or any non-empty pair
+  if(!u || !p){ err.style.display='block'; return; }
+  try{ sessionStorage.setItem('darbUser', u === 'darb' ? 'Al Reem Auto Spare Parts' : u); }catch(e){}
+  window.location.href = 'portal.html';
+});
+</script>
+</body>
+</html>

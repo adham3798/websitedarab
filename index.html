@@ -3,522 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fce500">
-<title>Darb Tires Trading — Wholesale Tire Supplier</title>
-<meta name="description" content="Darb Tires Trading — find the perfect tyres for your vehicle. Trusted wholesale and B2B tire supplier for passenger, commercial, and fleet vehicles.">
-<style>
-  :root{
-    --yellow:#fce500;
-    --yellow-dark:#e6d000;
-    --ink:#1a1a1a;
-    --ink-2:#444;
-    --muted:#6b7280;
-    --line:#e5e7eb;
-    --bg:#ffffff;
-    --bg-soft:#f6f7f9;
-    --bg-dark:#101418;
-    --radius:10px;
-    --max:1200px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:"Helvetica Neue",Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
-  }
-  [dir="rtl"] body{font-family:Tahoma,"Segoe UI",system-ui,sans-serif;}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-  h1,h2,h3{letter-spacing:-.01em}
-  .upper{text-transform:uppercase;letter-spacing:.04em}
-
-  /* Top bar */
-  .topbar{background:var(--bg-dark);color:#cbd2da;font-size:.8rem}
-  .topbar .wrap{display:flex;justify-content:flex-end;align-items:center;gap:20px;height:38px}
-  .topbar a{color:#cbd2da;transition:color .2s}
-  .topbar a:hover{color:var(--yellow)}
-  .topbar .sep{opacity:.3}
-
-  /* Header */
-  header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{
-    width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;
-    background:radial-gradient(circle at 50% 50%,#222 0 33%,var(--yellow) 34% 45%,#111 46% 60%,var(--yellow) 61% 72%,#222 73%);
-    border:2px solid var(--ink);
-  }
-  .logo b{font-size:.6rem;font-weight:900;color:var(--yellow);letter-spacing:.5px}
-  .brand .name{font-weight:900;font-size:1.2rem;line-height:1.05}
-  .brand .name small{display:block;font-weight:600;font-size:.62rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
-  .nav-links{display:flex;align-items:center;gap:26px}
-  .nav-links a{font-weight:700;font-size:.92rem;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
-  .nav-links a:hover{border-color:var(--yellow)}
-  .btn{
-    display:inline-block;background:var(--yellow);color:var(--ink);font-weight:800;
-    padding:12px 22px;border-radius:6px;border:none;cursor:pointer;font-size:.92rem;
-    transition:background .2s,transform .15s;
-  }
-  .btn:hover{background:var(--yellow-dark);transform:translateY(-1px)}
-  .btn-dark{background:var(--ink);color:#fff}
-  .btn-dark:hover{background:#000}
-  .btn-outline{background:transparent;border:2px solid var(--ink);color:var(--ink);padding:10px 20px}
-  .btn-outline:hover{background:var(--ink);color:#fff}
-  .lang-toggle{background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:6px;cursor:pointer;font-weight:800;font-size:.82rem;transition:border-color .2s}
-  .lang-toggle:hover{border-color:var(--ink)}
-  .menu-btn{display:none;background:none;border:none;font-size:1.7rem;cursor:pointer}
-
-  /* Hero */
-  .hero{position:relative;background:var(--bg-dark);color:#fff;overflow:hidden}
-  .hero::after{content:"";position:absolute;inset:0;background:
-    radial-gradient(900px 480px at 78% 12%,rgba(252,229,0,.16),transparent 60%);}
-  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:74px 0 80px}
-  .hero h1{font-size:3.2rem;line-height:1.05;font-weight:900;margin-bottom:18px}
-  .hero h1 .hl{color:var(--yellow)}
-  .hero p.lead{color:#c4ccd6;font-size:1.12rem;max-width:540px;margin-bottom:28px}
-  .search-card{background:#fff;color:var(--ink);border-radius:14px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
-  .search-card h3{font-size:1.15rem;font-weight:900;margin-bottom:4px}
-  .search-card p{color:var(--muted);font-size:.88rem;margin-bottom:16px}
-  .search-tabs{display:flex;gap:8px;margin-bottom:16px}
-  .search-tabs button{flex:1;padding:10px;border:1.5px solid var(--line);background:#fff;border-radius:6px;font-weight:800;font-size:.85rem;cursor:pointer;transition:.2s}
-  .search-tabs button.active{background:var(--yellow);border-color:var(--yellow)}
-  .search-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-  .search-card select,.search-card input{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:6px;font-size:.92rem;font-family:inherit;background:#fff}
-  .search-card .btn{width:100%;margin-top:4px}
-  .hero-trust{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
-  .hero-trust .t .n{font-size:1.7rem;font-weight:900;color:var(--yellow)}
-  .hero-trust .t .l{font-size:.82rem;color:#aeb6c0;font-weight:600}
-
-  /* Vehicle selector */
-  .section{padding:72px 0}
-  .section.soft{background:var(--bg-soft)}
-  .sec-head{text-align:center;max-width:680px;margin:0 auto 44px}
-  .sec-head .kicker{color:var(--ink);font-weight:900;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;background:var(--yellow);display:inline-block;padding:5px 12px;border-radius:4px;margin-bottom:14px}
-  .sec-head h2{font-size:2.2rem;font-weight:900;margin-bottom:12px}
-  .sec-head p{color:var(--muted);font-size:1.05rem}
-
-  .veh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .veh{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;transition:.2s;position:relative}
-  .veh:hover{border-color:var(--yellow);box-shadow:0 12px 28px rgba(0,0,0,.10);transform:translateY(-4px)}
-  .veh .photo{height:168px;background-size:cover;background-position:center;background-color:#dfe3e8}
-  .veh .body{padding:18px 18px 40px;text-align:center}
-  .veh h3{font-size:1rem;font-weight:800;margin-bottom:6px}
-  .veh p{color:var(--muted);font-size:.84rem}
-  .veh::after{content:"›";position:absolute;bottom:14px;right:18px;color:var(--yellow-dark);font-weight:900;font-size:1.3rem;opacity:0;transition:.2s}
-  [dir="rtl"] .veh::after{right:auto;left:18px;content:"‹"}
-  .veh:hover::after{opacity:1}
-
-  /* Trust band */
-  .trust-band{background:var(--bg-dark);color:#fff;text-align:center}
-  .trust-band .wrap{padding:60px 24px}
-  .trust-band h2{font-size:2rem;font-weight:900;margin-bottom:10px}
-  .trust-band p{color:#c4ccd6;max-width:620px;margin:0 auto 26px}
-
-  /* Feature split */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .feat-list{list-style:none;display:grid;gap:18px;margin-top:8px}
-  .feat-list li{display:flex;gap:14px;align-items:flex-start}
-  .feat-list .tick{flex:none;width:30px;height:30px;border-radius:6px;background:var(--yellow);color:var(--ink);display:grid;place-items:center;font-weight:900}
-  .feat-list h4{font-weight:800;margin-bottom:2px}
-  .feat-list p{color:var(--muted);font-size:.92rem}
-  .img-panel{background:linear-gradient(160deg,#1b232e,#101418);border-radius:16px;padding:44px;color:#fff;border:1px solid #222}
-  .img-panel .big{font-size:3.2rem;font-weight:900;color:var(--yellow);line-height:1}
-  .img-panel .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:6px}
-  .img-panel .lbl{color:#aeb6c0;font-weight:600;font-size:.9rem}
-
-  /* Brands */
-  .brand-strip{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-  .brand-strip .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:12px 26px;font-weight:800;color:var(--ink-2);transition:.2s}
-  .brand-strip .chip:hover{border-color:var(--yellow);color:var(--ink)}
-
-  /* CTA */
-  .cta{background:var(--yellow);border-radius:0}
-  .cta .wrap{padding:56px 24px;text-align:center}
-  .cta h2{font-size:2.1rem;font-weight:900;margin-bottom:10px}
-  .cta p{font-size:1.1rem;color:var(--ink-2);margin-bottom:24px;font-weight:600}
-
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
-  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
-  .info-row .ic{width:46px;height:46px;border-radius:8px;flex:none;display:grid;place-items:center;background:var(--yellow);font-size:1.2rem}
-  .info-row h4{font-weight:800;margin-bottom:2px}
-  .info-row p{color:var(--muted);font-size:.94rem}
-  form{display:grid;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
-  .field{display:grid;gap:6px}
-  .field label{font-size:.82rem;font-weight:800;color:var(--ink-2)}
-  input,textarea,select{font-family:inherit}
-  form input,form textarea{background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:12px;font-size:.94rem;color:var(--ink)}
-  form input:focus,form textarea:focus{outline:none;border-color:var(--yellow-dark)}
-  textarea{resize:vertical;min-height:110px}
-  #formNote{color:#0a7a2f;font-weight:800;display:none}
-
-  /* Footer */
-  footer{background:var(--bg-dark);color:#aeb6c0;padding:54px 0 24px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px}
-  .foot-col h4{color:#fff;font-weight:800;margin-bottom:14px;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em}
-  .foot-col a,.foot-col p{display:block;color:#aeb6c0;font-size:.9rem;margin-bottom:9px;transition:color .2s}
-  .foot-col a:hover{color:var(--yellow)}
-  .foot-brand .name{color:#fff;font-weight:900;font-size:1.1rem}
-  .foot-bottom{border-top:1px solid #222;padding-top:20px;text-align:center;font-size:.84rem}
-
-  @media(max-width:980px){
-    .hero-inner,.split,.contact-grid{grid-template-columns:1fr;gap:36px}
-    .veh-grid{grid-template-columns:1fr 1fr}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .hero h1{font-size:2.4rem}
-    .nav-links{display:none}
-    .menu-btn{display:block}
-    .nav-links.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:74px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:20px 24px;gap:16px}
-  }
-  @media(max-width:560px){
-    .veh-grid,.foot-grid,.search-row{grid-template-columns:1fr}
-    .hero h1{font-size:2rem}
-    .topbar{display:none}
-  }
-</style>
+<meta name="theme-color" content="#e40521">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Darb Tyres Trading L.L.C — Wholesale Tyre Supplier, Ajman UAE</title>
+<meta name="description" content="Darb Tyres Trading L.L.C — wholesale and B2B tyre supplier for car, 4x4, van, truck and bus across the UAE. Genuine brands, competitive pricing, reliable supply. Based in Ajman.">
+<script>try{var l=localStorage.getItem('darbLang')||'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="wrap">
-    <a href="#contact" data-i18n="top_contact">Contact Us</a>
-    <span class="sep">|</span>
-    <a href="#" data-i18n="top_b2b">B2B / Wholesale</a>
-    <span class="sep">|</span>
-    <span data-i18n="top_phone">📞 +000 000 0000</span>
-  </div>
-</div>
-
 <!-- HEADER -->
-<header>
+<header class="site">
   <div class="wrap nav">
-    <div class="brand">
-      <div class="logo"><b>DARB</b></div>
-      <div class="name"><span data-i18n="brand_name">Darb Tires</span><small data-i18n="brand_sub">Trading</small></div>
-    </div>
+    <a class="brand" href="index.html"><img class="nav-logo" src="darb-logo-on-dark.svg" alt="Darb Tyres Trading"></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#tyres" data-i18n="nav_tyres">Find Tyres</a>
-      <a href="#why" data-i18n="nav_why">Why Darb</a>
-      <a href="#brands" data-i18n="nav_brands">Brands</a>
-      <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+      <a href="products.html" data-i18n="nav_products">Products</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
       <button class="lang-toggle" id="langBtn" onclick="toggleLang()">العربية</button>
-      <a href="#contact" class="btn" data-i18n="nav_quote">Request a Quote</a>
+      <a href="distributor.html" class="btn btn-ghost" data-i18n="nav_distributor">Become a Distributor</a>
+      <a href="login.html" class="btn" data-i18n="nav_login">B2B Login</a>
     </nav>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <h1 data-i18n="hero_title">Find the perfect tyre <span class="hl">for every vehicle</span></h1>
-      <p class="lead" data-i18n="hero_lead">Darb Tires Trading is your trusted wholesale supplier — quality tyres for passenger, commercial, and fleet vehicles, delivered at scale with competitive pricing.</p>
-      <div class="hero-trust">
-        <div class="t"><div class="n">15+</div><div class="l" data-i18n="ht1">Years in trade</div></div>
-        <div class="t"><div class="n">50+</div><div class="l" data-i18n="ht2">Brands stocked</div></div>
-        <div class="t"><div class="n">1000s</div><div class="l" data-i18n="ht3">Tyres supplied</div></div>
+  <div class="hero-text">
+    <div class="hero-inner">
+      <div class="tagline" data-i18n="hero_tag">Wholesale Tyre Supplier · Ajman, UAE</div>
+      <h1 data-i18n="hero_title">Quality tyres, supplied at scale</h1>
+      <p data-i18n="hero_lead">Darb Tyres Trading is your trusted wholesale partner — supplying car, 4×4, van, truck and bus tyres to dealers, workshops and fleets across the UAE, the GCC and African markets.</p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn btn-lg" data-i18n="hero_cta1">Browse Products</a>
+        <a href="contact.html" class="btn btn-ghost btn-lg" data-i18n="hero_cta2">Request a Quote</a>
       </div>
     </div>
-    <div class="search-card">
-      <h3 data-i18n="sc_title">Find your tyre</h3>
-      <p data-i18n="sc_sub">Enter your vehicle or tyre size</p>
-      <div class="search-tabs">
-        <button class="active" id="tabSize" onclick="switchTab('size')" data-i18n="sc_tab1">By Size</button>
-        <button id="tabVeh" onclick="switchTab('veh')" data-i18n="sc_tab2">By Vehicle</button>
-      </div>
-      <div id="paneSize">
-        <div class="search-row">
-          <select><option data-i18n="sc_width">Width</option><option>185</option><option>195</option><option>205</option><option>215</option><option>225</option><option>235</option><option>265</option></select>
-          <select><option data-i18n="sc_profile">Profile</option><option>45</option><option>50</option><option>55</option><option>60</option><option>65</option><option>70</option></select>
-        </div>
-        <div class="search-row">
-          <select><option data-i18n="sc_rim">Rim</option><option>R15</option><option>R16</option><option>R17</option><option>R18</option><option>R19</option><option>R20</option></select>
-          <select><option data-i18n="sc_type">Type</option><option data-i18n="sc_t_pass">Passenger</option><option data-i18n="sc_t_suv">SUV / 4x4</option><option data-i18n="sc_t_comm">Commercial</option></select>
-        </div>
-      </div>
-      <div id="paneVeh" style="display:none">
-        <div class="search-row">
-          <select><option data-i18n="sc_make">Make</option><option>Toyota</option><option>Nissan</option><option>Hyundai</option><option>Mercedes</option><option>BMW</option><option>Ford</option></select>
-          <select><option data-i18n="sc_model">Model</option><option>—</option></select>
-        </div>
-        <div class="search-row">
-          <select><option data-i18n="sc_year">Year</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option></select>
-          <select><option data-i18n="sc_type">Type</option><option data-i18n="sc_t_pass">Passenger</option><option data-i18n="sc_t_suv">SUV / 4x4</option><option data-i18n="sc_t_comm">Commercial</option></select>
-        </div>
-      </div>
-      <a href="#contact" class="btn" data-i18n="sc_btn">Check Availability</a>
-    </div>
+  </div>
+  <div class="hero-photo">
+    <!-- photo: hero-photo (swap src to change) --><img class="slot" data-img="hero-photo" src="https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=1300&q=80&auto=format&fit=crop" alt="Hero photo — tyres" loading="lazy">
   </div>
 </section>
 
-<!-- VEHICLE TYPES -->
-<section class="section" id="tyres">
+<!-- STATS -->
+<div class="redstrip">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" data-i18n="vt_kicker">Our Range</span>
-      <h2 data-i18n="vt_title">What tyres are you looking for?</h2>
-      <p data-i18n="vt_sub">Select your vehicle type — we stock the categories your business needs.</p>
-    </div>
-    <div class="veh-grid">
-      <div class="veh"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80&auto=format&fit=crop')"></div><div class="body"><h3 data-i18n="v1_t">Cars, SUVs & Vans</h3><p data-i18n="v1_p">All-season and performance tyres for daily driving.</p></div></div>
-      <div class="veh"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format&fit=crop')"></div><div class="body"><h3 data-i18n="v2_t">Trucks & Commercial</h3><p data-i18n="v2_p">Durable tyres for heavy loads and long haul.</p></div></div>
-      <div class="veh"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80&auto=format&fit=crop')"></div><div class="body"><h3 data-i18n="v3_t">4x4 & Off-Road</h3><p data-i18n="v3_p">Rugged tyres for desert and tough terrain.</p></div></div>
-      <div class="veh"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80&auto=format&fit=crop')"></div><div class="body"><h3 data-i18n="v4_t">Bus & Fleet</h3><p data-i18n="v4_p">High-mileage tyres for managed fleets.</p></div></div>
-    </div>
+    <div class="it"><div class="n">2021</div><div class="l" data-i18n="rs1">Established in Ajman</div></div>
+    <div class="it"><div class="n">4</div><div class="l" data-i18n="rs2">Vehicle categories</div></div>
+    <div class="it"><div class="n">100%</div><div class="l" data-i18n="rs3">Genuine branded tyres</div></div>
+    <div class="it"><div class="n">24h</div><div class="l" data-i18n="rs4">Quote response</div></div>
   </div>
-</section>
+</div>
 
-<!-- TRUST BAND -->
-<section class="trust-band">
+<!-- PRODUCT CATEGORIES -->
+<section class="section">
   <div class="wrap">
-    <h2 data-i18n="tb_title">THE MOST DEMANDING BUSINESSES TRUST US</h2>
-    <p data-i18n="tb_sub">From independent garages to large fleets, businesses across the region rely on Darb for dependable tyre supply and genuine quality.</p>
-    <a href="#why" class="btn" data-i18n="tb_btn">Know More</a>
+    <div class="sec-head center">
+      <div class="kicker" data-i18n="pr_kicker">Our Products</div>
+      <h2 data-i18n="pr_title">Tyres for every vehicle</h2>
+      <p data-i18n="pr_sub">A complete range across consumer and commercial categories — sourced for the region's roads and your business needs.</p>
+    </div>
+    <div class="grid-3">
+      <a class="pcard" href="products.html">
+        <div class="photo"><span class="tag">PCR / SUV</span><!-- photo: home-cat-car (swap src to change) --><img class="slot" data-img="home-cat-car" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80&auto=format&fit=crop" alt="Car / 4×4 tyre photo" loading="lazy"></div>
+        <div class="body"><h3 data-i18n="hc1_t">Car &amp; 4×4</h3><p data-i18n="hc1_p">All-season, performance and SUV tyres for daily driving and off-road.</p><span class="more" data-i18n="hc_more">View range →</span></div>
+      </a>
+      <a class="pcard" href="products.html">
+        <div class="photo"><span class="tag">VAN / LT</span><!-- photo: home-cat-van (swap src to change) --><img class="slot" data-img="home-cat-van" src="https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=900&q=80&auto=format&fit=crop" alt="Van / pickup photo" loading="lazy"></div>
+        <div class="body"><h3 data-i18n="hc2_t">Van &amp; Light Truck</h3><p data-i18n="hc2_p">Reinforced tyres built to carry heavy loads while keeping running costs low.</p><span class="more" data-i18n="hc_more">View range →</span></div>
+      </a>
+      <a class="pcard" href="products.html">
+        <div class="photo"><span class="tag">TBR / BUS</span><!-- photo: home-cat-truck (swap src to change) --><img class="slot" data-img="home-cat-truck" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80&auto=format&fit=crop" alt="Truck / bus tyre photo" loading="lazy"></div>
+        <div class="body"><h3 data-i18n="hc3_t">Truck &amp; Bus</h3><p data-i18n="hc3_p">Maximum mileage and safety for fleets and long-haul transport.</p><span class="more" data-i18n="hc_more">View range →</span></div>
+      </a>
+      <a class="pcard" href="products.html">
+        <div class="photo"><span class="tag">OTR</span><!-- photo: home-cat-otr (swap src to change) --><img class="slot" data-img="home-cat-otr" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop" alt="Loader / grader photo" loading="lazy"></div>
+        <div class="body"><h3 data-i18n="hc4_t">OTR &amp; Earthmover</h3><p data-i18n="hc4_p">Loader, grader and haul tyres for construction and earthmoving.</p><span class="more" data-i18n="hc_more">View range →</span></div>
+      </a>
+      <a class="pcard" href="products.html">
+        <div class="photo"><span class="tag">MINING</span><!-- photo: home-cat-mining (swap src to change) --><img class="slot" data-img="home-cat-mining" src="https://images.unsplash.com/photo-1517089152318-42ec560349c0?w=900&q=80&auto=format&fit=crop" alt="Mining haul-truck photo" loading="lazy"></div>
+        <div class="body"><h3 data-i18n="hc5_t">Mining</h3><p data-i18n="hc5_p">Heavy-duty tyres engineered for haul trucks and severe mining duty.</p><span class="more" data-i18n="hc_more">View range →</span></div>
+      </a>
+      <a class="pcard" href="products.html">
+        <div class="photo"><span class="tag">AGRI</span><!-- photo: home-cat-agri (swap src to change) --><img class="slot" data-img="home-cat-agri" src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?w=900&q=80&auto=format&fit=crop" alt="Tractor photo" loading="lazy"></div>
+        <div class="body"><h3 data-i18n="hc6_t">Agricultural</h3><p data-i18n="hc6_p">Tractor, flotation and implement tyres that protect soil and grip.</p><span class="more" data-i18n="hc_more">View range →</span></div>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- WHY -->
-<section class="section" id="why">
+<section class="section soft">
   <div class="wrap split">
+    <div class="media"><!-- photo: home-why (swap src to change) --><img class="slot" data-img="home-why" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1000&q=80&auto=format&fit=crop" alt="Warehouse / stacked tyres photo" loading="lazy"></div>
     <div>
-      <span class="kicker" style="background:var(--yellow);color:var(--ink);font-weight:900;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:5px 12px;border-radius:4px;margin-bottom:14px" data-i18n="why_kicker">Why Darb</span>
-      <h2 style="font-size:2.2rem;font-weight:900;margin-bottom:8px" data-i18n="why_title">Built on trust and reliability</h2>
-      <p style="color:var(--muted);margin-bottom:6px" data-i18n="why_sub">We treat every order as a partnership. Here's what sets us apart.</p>
+      <div class="kicker" data-i18n="why_kicker">Why Darb</div>
+      <h2 class="sec-head" style="font-size:clamp(1.8rem,3.2vw,2.6rem);text-transform:uppercase;margin-bottom:6px" data-i18n="why_title">Built on trust and reliability</h2>
+      <p style="color:var(--muted)" data-i18n="why_sub">We treat every order as a partnership. Here's what sets us apart.</p>
       <ul class="feat-list">
         <li><span class="tick">✓</span><div><h4 data-i18n="w1_t">Genuine Quality</h4><p data-i18n="w1_p">Authentic tyres sourced from established, reputable manufacturers.</p></div></li>
         <li><span class="tick">✓</span><div><h4 data-i18n="w2_t">Competitive Wholesale Pricing</h4><p data-i18n="w2_p">Volume pricing that protects your margins.</p></div></li>
-        <li><span class="tick">✓</span><div><h4 data-i18n="w3_t">Consistent Supply</h4><p data-i18n="w3_p">Reliable stock levels so you never run short.</p></div></li>
-        <li><span class="tick">✓</span><div><h4 data-i18n="w4_t">Dedicated Account Support</h4><p data-i18n="w4_p">A direct line for orders, quotes, and follow-up.</p></div></li>
+        <li><span class="tick">✓</span><div><h4 data-i18n="w3_t">Consistent Supply</h4><p data-i18n="w3_p">Reliable stock so you never run short on fast-moving sizes.</p></div></li>
+        <li><span class="tick">✓</span><div><h4 data-i18n="w4_t">Dedicated Account Support</h4><p data-i18n="w4_p">A direct line for orders, quotes and follow-up.</p></div></li>
       </ul>
-    </div>
-    <div class="img-panel">
-      <h3 style="font-size:1.4rem;font-weight:900;margin-bottom:4px" data-i18n="wp_title">Trusted by businesses</h3>
-      <p style="color:#aeb6c0;margin-bottom:24px" data-i18n="wp_sub">that depend on dependable tyre supply</p>
-      <div class="stat-grid">
-        <div><div class="big">15+</div><div class="lbl" data-i18n="wp1">Years of experience</div></div>
-        <div><div class="big">1000s</div><div class="lbl" data-i18n="wp2">Tyres supplied</div></div>
-        <div><div class="big">50+</div><div class="lbl" data-i18n="wp3">Brands available</div></div>
-        <div><div class="big">100%</div><div class="lbl" data-i18n="wp4">Genuine products</div></div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- BRANDS -->
-<section class="section soft" id="brands">
+<section class="section">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" data-i18n="br_kicker">Brands We Carry</span>
+    <div class="sec-head center">
+      <div class="kicker" data-i18n="br_kicker">Brands We Carry</div>
       <h2 data-i18n="br_title">Leading tyre brands</h2>
-      <p data-i18n="br_sub">We stock a broad portfolio of trusted international brands. Contact us for specific availability.</p>
+      <p data-i18n="br_sub">We stock a broad portfolio of trusted international brands. Contact us for current availability and pricing.</p>
     </div>
     <div class="brand-strip">
-      <span class="chip">Michelin</span><span class="chip">Bridgestone</span><span class="chip">Goodyear</span>
-      <span class="chip">Continental</span><span class="chip">Pirelli</span><span class="chip">Dunlop</span>
-      <span class="chip">Hankook</span><span class="chip">Yokohama</span><span class="chip">Kumho</span><span class="chip">Toyo</span>
+      <a class="chip" href="https://www.bridgestone.com" target="_blank" rel="noopener">Bridgestone</a><a class="chip" href="https://www.michelin.com" target="_blank" rel="noopener">Michelin</a><a class="chip" href="https://www.goodyear.com" target="_blank" rel="noopener">Goodyear</a>
+      <a class="chip" href="https://www.continental-tires.com" target="_blank" rel="noopener">Continental</a><a class="chip" href="https://www.pirelli.com" target="_blank" rel="noopener">Pirelli</a><a class="chip" href="https://www.dunloptires.com" target="_blank" rel="noopener">Dunlop</a>
+      <a class="chip" href="https://www.hankooktire.com" target="_blank" rel="noopener">Hankook</a><a class="chip" href="https://www.yokohamatire.com" target="_blank" rel="noopener">Yokohama</a><a class="chip" href="https://www.kumhotire.com" target="_blank" rel="noopener">Kumho</a><a class="chip" href="https://www.toyotires.com" target="_blank" rel="noopener">Toyo</a>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:18px" data-i18n="br_note">Brand names shown are illustrative — replace with your actual stocked brands.</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="wrap split">
-    <div class="img-panel" style="background:linear-gradient(160deg,#fce500,#e6d000);color:var(--ink)">
-      <h3 style="font-size:1.5rem;font-weight:900;margin-bottom:10px" data-i18n="ab_card_t">Darb in the region</h3>
-      <p style="font-weight:600" data-i18n="ab_card_p">Working to keep businesses moving with dependable tyre supply, fast logistics, and service you can count on.</p>
-    </div>
-    <div>
-      <span class="kicker" data-i18n="ab_kicker">About Us</span>
-      <h2 style="font-size:2.2rem;font-weight:900;margin:12px 0 12px" data-i18n="ab_title">Your trusted tyre trading partner</h2>
-      <p style="color:var(--ink-2)" data-i18n="ab_p1">Darb Tires Trading is a wholesale tyre supplier serving dealers, workshops, and fleet operators. We combine deep inventory, established brand relationships, and fast logistics to keep your business rolling.</p>
-      <p style="color:var(--ink-2);margin-top:14px" data-i18n="ab_p2">Our priority is uncompromising quality and service that B2B buyers depend on — every order treated as a long-term partnership.</p>
-    </div>
+    <p style="text-align:center;color:var(--muted);font-size:.84rem;margin-top:18px" data-i18n="br_note">Availability varies — contact us to confirm brands and sizes in stock.</p>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
+<section class="cta" id="contact">
   <div class="wrap">
-    <h2 data-i18n="cta_title">Ready to place a wholesale order?</h2>
-    <p data-i18n="cta_sub">Get a competitive quote tailored to your business needs.</p>
-    <a href="#contact" class="btn btn-dark" data-i18n="cta_btn">Get in Touch</a>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section soft" id="contact">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker" data-i18n="ct_kicker">Contact Us</span>
-      <h2 data-i18n="ct_title">Let's talk business</h2>
-      <p data-i18n="ct_sub">Reach out for quotes, availability, or to open a wholesale account.</p>
-    </div>
-    <div class="contact-grid">
+    <div class="cta-split">
       <div>
-        <div class="info-row"><div class="ic">📍</div><div><h4 data-i18n="ci1_t">Address</h4><p data-i18n="ci1_p">Industrial Area, [Your City], [Country]</p></div></div>
-        <div class="info-row"><div class="ic">📞</div><div><h4 data-i18n="ci2_t">Phone</h4><p>+000 000 0000</p></div></div>
-        <div class="info-row"><div class="ic">💬</div><div><h4 data-i18n="ci3_t">WhatsApp</h4><p>+000 000 0000</p></div></div>
-        <div class="info-row"><div class="ic">✉️</div><div><h4 data-i18n="ci4_t">Email</h4><p>info@darbtires.com</p></div></div>
-        <div class="info-row"><div class="ic">🕐</div><div><h4 data-i18n="ci5_t">Working Hours</h4><p data-i18n="ci5_p">Sat–Thu: 8:00 AM – 6:00 PM</p></div></div>
+        <h2 data-i18n="cta_title">Ready to place a wholesale order?</h2>
+        <p data-i18n="cta_sub">Tell us the sizes and quantities you need — we'll come back with a competitive quote within one business day.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:20px;font-weight:700">
+          <a data-tel href="#" data-cfg-phone style="color:#fff">+971 52 466 6601</a>
+          <a data-mail href="#" data-cfg-email style="color:#fff">darbtyrestrading@gmail.com</a>
+        </div>
       </div>
-      <form onsubmit="return submitForm(event)">
-        <div class="field"><label data-i18n="f_name">Name / Company</label><input type="text" required></div>
-        <div class="field"><label data-i18n="f_phone">Phone</label><input type="tel" required></div>
-        <div class="field"><label data-i18n="f_email">Email</label><input type="email"></div>
-        <div class="field"><label data-i18n="f_msg">Your enquiry</label><textarea data-i18n-ph="f_msg_ph" placeholder="Tell us what tyres and quantities you need..."></textarea></div>
-        <button type="submit" class="btn" data-i18n="f_submit">Send Enquiry</button>
-        <p id="formNote" data-i18n="f_thanks">Thank you — we'll get back to you shortly.</p>
+      <form class="form" data-demo>
+        <div class="field"><label data-i18n="cf_name">Full Name</label><input type="text" data-i18n-ph="cf_name" placeholder="Full Name"></div>
+        <div class="grid-2" style="gap:14px">
+          <div class="field"><label data-i18n="cf_company">Company</label><input type="text" data-i18n-ph="cf_company" placeholder="Company"></div>
+          <div class="field"><label data-i18n="cf_email">Email</label><input type="email" data-i18n-ph="cf_email" placeholder="Email"></div>
+        </div>
+        <div class="field"><label data-i18n="cf_msg">Sizes / quantities / message</label><textarea data-i18n-ph="cf_msg" placeholder="Sizes / quantities / message"></textarea></div>
+        <button type="submit" class="btn" data-i18n="cf_send">Send Request</button>
       </form>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col foot-brand">
-        <div class="brand" style="margin-bottom:14px"><div class="logo"><b>DARB</b></div><div class="name" style="color:#fff"><span data-i18n="brand_name">Darb Tires</span><small style="color:#aeb6c0" data-i18n="brand_sub">Trading</small></div></div>
-        <p data-i18n="foot_tag">Your trusted wholesale tyre supplier for passenger, commercial, and fleet vehicles.</p>
+        <img class="foot-logo" src="darb-logo-on-dark.svg" alt="Darb Tyres Trading">
+        <p data-i18n="foot_tag">Your trusted wholesale tyre supplier for car, 4×4, van, truck and bus — based in Ajman, UAE.</p>
       </div>
       <div class="foot-col">
-        <h4 data-i18n="foot_links">Quick Links</h4>
-        <a href="#tyres" data-i18n="nav_tyres">Find Tyres</a>
-        <a href="#why" data-i18n="nav_why">Why Darb</a>
-        <a href="#brands" data-i18n="nav_brands">Brands</a>
-        <a href="#about" data-i18n="nav_about">About</a>
+        <h4 data-i18n="foot_products">Our Tyres</h4>
+        <a href="products.html" data-i18n="fp_car">Car &amp; 4×4 tyres</a>
+        <a href="products.html" data-i18n="fp_van">Van tyres</a>
+        <a href="products.html" data-i18n="fp_truck">Truck tyres</a>
+        <a href="products.html" data-i18n="fp_bus">Bus tyres</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_company">Company</h4>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="distributor.html" data-i18n="nav_distributor">Become a Distributor</a>
+        <a href="login.html" data-i18n="nav_login">B2B Login</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="foot-col">
         <h4 data-i18n="foot_reach">Contact</h4>
-        <p>+000 000 0000</p>
-        <p>info@darbtires.com</p>
-        <p data-i18n="ci1_p">Industrial Area, [Your City], [Country]</p>
-      </div>
-      <div class="foot-col">
-        <h4 data-i18n="foot_hours">Hours</h4>
-        <p data-i18n="ci5_p">Sat–Thu: 8:00 AM – 6:00 PM</p>
-        <p data-i18n="foot_fri">Friday: Closed</p>
+        <p data-cfg-address>Office No. 640, Nakheel 2, Ajman, UAE</p>
+        <a data-tel href="#" data-cfg-phone>+971 52 466 6601</a>
+        <a data-mail href="#" data-cfg-email>darbtyrestrading@gmail.com</a>
+        <p data-i18n="ci_hours">Sat–Thu: 8:00 AM – 6:00 PM</p>
       </div>
     </div>
-    <div class="foot-bottom">© <span id="year"></span> Darb Tires Trading. <span data-i18n="foot_rights">All rights reserved.</span></div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> <span data-cfg-company>DARB TYRES TRADING L.L.C</span>. <span data-i18n="foot_rights">All rights reserved.</span></span>
+      <span>Reg. No. <span data-cfg-reg>201803814</span></span>
+    </div>
   </div>
 </footer>
 
-<script>
-const I18N = {
-  en:{
-    top_contact:"Contact Us",top_b2b:"B2B / Wholesale",top_phone:"📞 +000 000 0000",
-    brand_name:"Darb Tires",brand_sub:"Trading",
-    nav_tyres:"Find Tyres",nav_why:"Why Darb",nav_brands:"Brands",nav_about:"About",nav_contact:"Contact",nav_quote:"Request a Quote",
-    hero_title:"Find the perfect tyre for every vehicle",
-    hero_lead:"Darb Tires Trading is your trusted wholesale supplier — quality tyres for passenger, commercial, and fleet vehicles, delivered at scale with competitive pricing.",
-    ht1:"Years in trade",ht2:"Brands stocked",ht3:"Tyres supplied",
-    sc_title:"Find your tyre",sc_sub:"Enter your vehicle or tyre size",
-    sc_tab1:"By Size",sc_tab2:"By Vehicle",
-    sc_width:"Width",sc_profile:"Profile",sc_rim:"Rim",sc_type:"Type",
-    sc_t_pass:"Passenger",sc_t_suv:"SUV / 4x4",sc_t_comm:"Commercial",
-    sc_make:"Make",sc_model:"Model",sc_year:"Year",sc_btn:"Check Availability",
-    vt_kicker:"Our Range",vt_title:"What tyres are you looking for?",vt_sub:"Select your vehicle type — we stock the categories your business needs.",
-    v1_t:"Cars, SUVs & Vans",v1_p:"All-season and performance tyres for daily driving.",
-    v2_t:"Trucks & Commercial",v2_p:"Durable tyres for heavy loads and long haul.",
-    v3_t:"4x4 & Off-Road",v3_p:"Rugged tyres for desert and tough terrain.",
-    v4_t:"Bus & Fleet",v4_p:"High-mileage tyres for managed fleets.",
-    tb_title:"THE MOST DEMANDING BUSINESSES TRUST US",
-    tb_sub:"From independent garages to large fleets, businesses across the region rely on Darb for dependable tyre supply and genuine quality.",
-    tb_btn:"Know More",
-    why_kicker:"Why Darb",why_title:"Built on trust and reliability",why_sub:"We treat every order as a partnership. Here's what sets us apart.",
-    w1_t:"Genuine Quality",w1_p:"Authentic tyres sourced from established, reputable manufacturers.",
-    w2_t:"Competitive Wholesale Pricing",w2_p:"Volume pricing that protects your margins.",
-    w3_t:"Consistent Supply",w3_p:"Reliable stock levels so you never run short.",
-    w4_t:"Dedicated Account Support",w4_p:"A direct line for orders, quotes, and follow-up.",
-    wp_title:"Trusted by businesses",wp_sub:"that depend on dependable tyre supply",
-    wp1:"Years of experience",wp2:"Tyres supplied",wp3:"Brands available",wp4:"Genuine products",
-    br_kicker:"Brands We Carry",br_title:"Leading tyre brands",br_sub:"We stock a broad portfolio of trusted international brands. Contact us for specific availability.",
-    br_note:"Brand names shown are illustrative — replace with your actual stocked brands.",
-    ab_kicker:"About Us",ab_title:"Your trusted tyre trading partner",
-    ab_p1:"Darb Tires Trading is a wholesale tyre supplier serving dealers, workshops, and fleet operators. We combine deep inventory, established brand relationships, and fast logistics to keep your business rolling.",
-    ab_p2:"Our priority is uncompromising quality and service that B2B buyers depend on — every order treated as a long-term partnership.",
-    ab_card_t:"Darb in the region",ab_card_p:"Working to keep businesses moving with dependable tyre supply, fast logistics, and service you can count on.",
-    cta_title:"Ready to place a wholesale order?",cta_sub:"Get a competitive quote tailored to your business needs.",cta_btn:"Get in Touch",
-    ct_kicker:"Contact Us",ct_title:"Let's talk business",ct_sub:"Reach out for quotes, availability, or to open a wholesale account.",
-    ci1_t:"Address",ci1_p:"Industrial Area, [Your City], [Country]",
-    ci2_t:"Phone",ci3_t:"WhatsApp",ci4_t:"Email",ci5_t:"Working Hours",ci5_p:"Sat–Thu: 8:00 AM – 6:00 PM",
-    f_name:"Name / Company",f_phone:"Phone",f_email:"Email",f_msg:"Your enquiry",
-    f_msg_ph:"Tell us what tyres and quantities you need...",f_submit:"Send Enquiry",f_thanks:"Thank you — we'll get back to you shortly.",
-    foot_tag:"Your trusted wholesale tyre supplier for passenger, commercial, and fleet vehicles.",
-    foot_links:"Quick Links",foot_reach:"Contact",foot_hours:"Hours",foot_fri:"Friday: Closed",foot_rights:"All rights reserved."
-  },
-  ar:{
-    top_contact:"تواصل معنا",top_b2b:"شركات / جملة",top_phone:"📞 ‎+000 000 0000",
-    brand_name:"درب للإطارات",brand_sub:"للتجارة",
-    nav_tyres:"ابحث عن إطارات",nav_why:"لماذا درب",nav_brands:"العلامات",nav_about:"من نحن",nav_contact:"تواصل",nav_quote:"اطلب عرض سعر",
-    hero_title:"اعثر على الإطار المثالي لكل مركبة",
-    hero_lead:"درب لتجارة الإطارات هو مورّدك الموثوق بالجملة — إطارات عالية الجودة للسيارات الخاصة والتجارية وأساطيل المركبات، بكميات كبيرة وأسعار تنافسية.",
-    ht1:"سنوات في التجارة",ht2:"علامة تجارية",ht3:"إطار تم توريده",
-    sc_title:"ابحث عن إطارك",sc_sub:"أدخل مركبتك أو مقاس الإطار",
-    sc_tab1:"حسب المقاس",sc_tab2:"حسب المركبة",
-    sc_width:"العرض",sc_profile:"الارتفاع",sc_rim:"القطر",sc_type:"النوع",
-    sc_t_pass:"ركاب",sc_t_suv:"دفع رباعي",sc_t_comm:"تجاري",
-    sc_make:"الماركة",sc_model:"الموديل",sc_year:"السنة",sc_btn:"تحقق من التوفّر",
-    vt_kicker:"تشكيلتنا",vt_title:"عن أي إطارات تبحث؟",vt_sub:"اختر نوع مركبتك — نوفّر الفئات التي يحتاجها عملك.",
-    v1_t:"سيارات ودفع رباعي وفان",v1_p:"إطارات لجميع الفصول وعالية الأداء للقيادة اليومية.",
-    v2_t:"شاحنات وتجارية",v2_p:"إطارات متينة للأحمال الثقيلة والمسافات الطويلة.",
-    v3_t:"دفع رباعي وطرق وعرة",v3_p:"إطارات قوية للصحراء والتضاريس الصعبة.",
-    v4_t:"حافلات وأساطيل",v4_p:"إطارات عالية الكيلومترات لأساطيل المركبات.",
-    tb_title:"أكثر الشركات تطلّباً تثق بنا",
-    tb_sub:"من الورش المستقلة إلى الأساطيل الكبيرة، تعتمد الشركات في المنطقة على درب لإمداد إطارات موثوق وجودة أصلية.",
-    tb_btn:"اعرف المزيد",
-    why_kicker:"لماذا درب",why_title:"مبنية على الثقة والموثوقية",why_sub:"نتعامل مع كل طلب كشراكة. إليك ما يميّزنا.",
-    w1_t:"جودة أصلية",w1_p:"إطارات أصلية من مصنّعين معروفين وذوي سمعة راسخة.",
-    w2_t:"أسعار جملة تنافسية",w2_p:"أسعار للكميات تحمي هوامش ربحك.",
-    w3_t:"إمداد مستمر",w3_p:"مستويات مخزون موثوقة حتى لا ينفد لديك أبداً.",
-    w4_t:"دعم مخصص للحسابات",w4_p:"خط مباشر للطلبات وعروض الأسعار والمتابعة.",
-    wp_title:"موضع ثقة الشركات",wp_sub:"التي تعتمد على إمداد إطارات موثوق",
-    wp1:"سنوات من الخبرة",wp2:"إطار تم توريده",wp3:"علامة تجارية متوفرة",wp4:"منتجات أصلية",
-    br_kicker:"العلامات التي نوفّرها",br_title:"أبرز علامات الإطارات",br_sub:"نوفّر مجموعة واسعة من العلامات العالمية الموثوقة. تواصل معنا لمعرفة التوفّر.",
-    br_note:"الأسماء المعروضة توضيحية — استبدلها بالعلامات التي توفّرها فعلياً.",
-    ab_kicker:"من نحن",ab_title:"شريكك الموثوق في تجارة الإطارات",
-    ab_p1:"درب لتجارة الإطارات مورّد إطارات بالجملة يخدم الموزعين والورش ومشغّلي الأساطيل. نجمع بين المخزون الواسع وعلاقات راسخة مع العلامات التجارية وخدمات لوجستية سريعة لإبقاء أعمالك مستمرة.",
-    ab_p2:"أولويتنا هي الجودة التي لا تقبل المساومة والخدمة التي يعتمد عليها عملاء الجملة — كل طلب يُعامَل كشراكة طويلة الأمد.",
-    ab_card_t:"درب في المنطقة",ab_card_p:"نعمل على إبقاء الأعمال متحركة بإمداد إطارات موثوق ولوجستيات سريعة وخدمة يمكنك الاعتماد عليها.",
-    cta_title:"جاهز لطلب بالجملة؟",cta_sub:"احصل على عرض سعر تنافسي مصمم حسب احتياجات عملك.",cta_btn:"تواصل معنا",
-    ct_kicker:"تواصل معنا",ct_title:"لنتحدث عن العمل",ct_sub:"تواصل معنا لعروض الأسعار أو التوفّر أو لفتح حساب جملة.",
-    ci1_t:"العنوان",ci1_p:"المنطقة الصناعية، [مدينتك]، [الدولة]",
-    ci2_t:"الهاتف",ci3_t:"واتساب",ci4_t:"البريد الإلكتروني",ci5_t:"ساعات العمل",ci5_p:"السبت–الخميس: 8:00 ص – 6:00 م",
-    f_name:"الاسم / الشركة",f_phone:"الهاتف",f_email:"البريد الإلكتروني",f_msg:"استفسارك",
-    f_msg_ph:"أخبرنا بنوع الإطارات والكميات التي تحتاجها...",f_submit:"إرسال الاستفسار",f_thanks:"شكراً لك — سنعاود التواصل معك قريباً.",
-    foot_tag:"مورّدك الموثوق للإطارات بالجملة للسيارات الخاصة والتجارية وأساطيل المركبات.",
-    foot_links:"روابط سريعة",foot_reach:"تواصل",foot_hours:"ساعات العمل",foot_fri:"الجمعة: مغلق",foot_rights:"جميع الحقوق محفوظة."
-  }
-};
-
-let lang="en";
-function applyLang(){
-  const t=I18N[lang];
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
-  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(t[k]!==undefined)el.textContent=t[k];});
-  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{const k=el.getAttribute("data-i18n-ph");if(t[k]!==undefined)el.setAttribute("placeholder",t[k]);});
-  document.getElementById("langBtn").textContent=lang==="en"?"العربية":"English";
-  document.title=lang==="ar"?"درب لتجارة الإطارات — مورد إطارات بالجملة":"Darb Tires Trading — Wholesale Tire Supplier";
-}
-function toggleLang(){lang=lang==="en"?"ar":"en";applyLang();}
-function toggleMenu(){document.getElementById("navLinks").classList.toggle("open");}
-function switchTab(which){
-  const s=which==="size";
-  document.getElementById("paneSize").style.display=s?"block":"none";
-  document.getElementById("paneVeh").style.display=s?"none":"block";
-  document.getElementById("tabSize").classList.toggle("active",s);
-  document.getElementById("tabVeh").classList.toggle("active",!s);
-}
-function submitForm(e){e.preventDefault();document.getElementById("formNote").style.display="block";e.target.reset();return false;}
-document.getElementById("year").textContent=new Date().getFullYear();
-applyLang();
-</script>
+<a class="wa-float" id="waFloat" href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9 1 1-4.8-.3-.4C5.5 18 5 16.5 5 15 5 8.9 9.9 4 16 4s11 4.9 11 11-4.9 9.8-11 9.8zm6.1-7.3c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
 </body>
 </html>
